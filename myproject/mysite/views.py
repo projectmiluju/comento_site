@@ -9,4 +9,4 @@ def index(request):
 def detail(request, content_id):
     content_list = MainContent.objects.get(id=content_id)
     context = {'content_list': content_list}
-    return render(request,'mysite/content_detail.html',context)
+    return render(request, 'mysite/content_detail.html', context)
