@@ -14,9 +14,9 @@
     <link rel="stylesheet" type="text/css" href="{% static 'bootstrap.min.css' %}">
 </head>
 <body>
-    {% include "navbar.html" %}
-    {% block content %}
-    {% endblock %}
-    {% include "footer.html" %}
+{% include "pages/navbar.html" %}
+{% block content %}
+{% endblock %}
+{% include "pages/footer.html" %}
 </body>
 </html>
