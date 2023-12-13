@@ -8,10 +8,9 @@
 <section class="mb-5">
     <div class="card bg-light">
         <div class="card-body">
-            <form method="post" class="mb-4" action="">
+            <form method="post" class="mb-4" action="{% url 'comment_create' content_list.id %}">
                 {% csrf_token %}
-                <textarea id="content" name="content" class="form-control" rows="3"
-                      placeholder="내용을 입력해주세요."></textarea>
+                <textarea id="content" name="content" class="form-control" rows="3" placeholder="내용을 입력해주세요."></textarea>
                 <button type="submit" class="btn btn-primary">submit</button>
             </form>
             {% for comment in content_list.comment_set.all %}
