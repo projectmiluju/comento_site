@@ -1,5 +1,6 @@
 # from django.http import HttpResponse # 삭제
 from django.shortcuts import get_object_or_404, render, redirect
+from django.contrib.auth.decorators import login_required
 from .models import MainContent
 from .forms import CommentForm
 def index(request):
@@ -12,6 +13,7 @@ def detail(request, content_id):
     context = {'content_list': content_list}
     return render(request, 'mysite/content_detail.html', context)
 
+@login_required(login_url='accounts:login')
 def comment_create(request, content_id):
     content_list = get_object_or_404(MainContent, pk=content_id)
 
